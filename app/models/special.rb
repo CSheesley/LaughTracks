@@ -3,7 +3,11 @@ class Special < ActiveRecord::Base
 
   validates :name, presence: true
 
+  def self.populate(comedians)
+    Special.where(comedian_id: comedians.pluck(:id))
+  end
+
   def self.average_run_time
-    average(:run_time)
+    if average(:run_time) then average(:run_time) else 0 end
   end
 end
