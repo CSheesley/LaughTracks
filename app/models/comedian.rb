@@ -5,16 +5,15 @@ class Comedian < ActiveRecord::Base
   validates :age, presence: true
 
   def self.populate_by(params)
-    @comedians = Comedian.all
-    if @comedians.pluck(:age).include?(params[:age].to_i)
-      @comedians = Comedian.where(age: params[:age])
+    if params.present?
+      @comedians = Comedian.where(age: params[:age]).order(:name)
     else
-      @comedians = Comedian.all
+      @comedians = Comedian.all.order(:name)
     end
   end
 
   def self.average_age
-    average(:age)
+    if average(:age) then average(:age) else 0 end
   end
 
   def self.hometowns
