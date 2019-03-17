@@ -1,0 +1,70 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  background: white;
+}
+
+header {
+  background: black;
+  color: white;
+}
+
+header h1 {
+  font-size: 75px;
+  float: right;
+  display: inline-block;
+  padding: 20;
+}
+
+header .img {
+  float: right;
+  display: inline-block;
+  margin: auto;
+  height: 10px;
+  width: 10px;
+}
+
+#filter-or-add {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  background: black;
+  color: white;
+}
+
+#statistics {
+  display: flex;
+  flex-direction: column;
+}
+
+#statistics h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.three-stats {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.hometowns-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#profiles {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#profiles .card {
+  border: solid;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
