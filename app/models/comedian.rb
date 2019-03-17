@@ -4,7 +4,7 @@ class Comedian < ActiveRecord::Base
   validates :name, presence: true
   validates :age, presence: true
 
-  def self.populate(params)
+  def self.populate_by(params)
     @comedians = Comedian.all
     if @comedians.pluck(:age).include?(params[:age].to_i)
       @comedians = Comedian.where(age: params[:age])
@@ -20,7 +20,7 @@ class Comedian < ActiveRecord::Base
   def self.hometowns
     towns_string = " "
     pluck(:home_town).uniq.sort.each do |town|
-      towns_string << town << " - "
+      towns_string << town << " | "
       end
     towns_string
   end

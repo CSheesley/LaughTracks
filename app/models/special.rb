@@ -2,6 +2,11 @@ class Special < ActiveRecord::Base
   belongs_to :comedians
 
   validates :name, presence: true
+  validates :run_time, presence: true
+
+  def self.populate_from(comedians)
+    Special.where(comedian_id: comedians.pluck(:id))
+  end
 
   def self.populate(comedians)
     Special.where(comedian_id: comedians.pluck(:id))

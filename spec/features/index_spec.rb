@@ -143,22 +143,22 @@ RSpec.describe 'comedians homepage view' do
       end
 
       it 'should redirect me back to the homepage, where the comedian has been added' do
-          visit '/comedians/new'
+        visit '/comedians/new'
 
-          within ".add-new" do
-            fill_in('name', with: 'John Stewart')
-            fill_in('age', with: 52)
-            fill_in('hometown', with: 'New Township, NJ')
-            find_button('Submit').click
-          end
+        within ".add-new" do
+          fill_in('name', with: 'John Stewart')
+          fill_in('age', with: 52)
+          fill_in('hometown', with: 'New Township, NJ')
+          find_button('Submit').click
+        end
 
-          expect(page).to have_content('Laugh Tracks')
+        expect(page).to have_content('Laugh Tracks')
 
-          within "#profiles" do
-            expect(page).to have_content('John Stewart')
-            expect(page).to have_content('52')
-            expect(page).to have_content('New Township, NJ')
-          end
+        within "#profiles" do
+          expect(page).to have_content('John Stewart')
+          expect(page).to have_content('52')
+          expect(page).to have_content('New Township, NJ')
+        end
       end
     end
   end

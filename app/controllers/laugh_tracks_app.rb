@@ -1,8 +1,8 @@
 class LaughTracksApp < Sinatra::Base
 
   get "/comedians" do
-      @comedians = Comedian.populate(params)
-      @specials = Special.populate(@comedians)
+      @comedians = Comedian.populate_by(params)
+      @specials = Special.populate_from(@comedians)
     erb :index
   end
 
