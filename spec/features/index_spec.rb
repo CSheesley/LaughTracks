@@ -101,6 +101,7 @@ RSpec.describe 'comedians homepage view' do
           expect(page).to have_content("Chicago, IL")
           expect(page).to_not have_content("New York, NY")
         end
+
         within "#profiles" do
           expect(page).to have_content('John Mulaney')
           expect(page).to have_content('Hannibal Buress')
@@ -123,6 +124,7 @@ RSpec.describe 'comedians homepage view' do
         within "#comedian-#{c1.id}" do
           expect(page).to have_content("1")
         end
+        
         within "#comedian-#{c2.id}" do
           expect(page).to have_content('2')
         end
