@@ -8,6 +8,10 @@ class Special < ActiveRecord::Base
     Special.where(comedian_id: comedians.pluck(:id))
   end
 
+  def self.populate(comedians)
+    Special.where(comedian_id: comedians.pluck(:id))
+  end
+
   def self.average_run_time
     if average(:run_time) then average(:run_time) else 0 end
   end
